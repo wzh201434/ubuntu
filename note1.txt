@@ -1,3 +1,5 @@
+WARNING: The directory '/home/wang/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+WARNING: The directory '/home/wang/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
 直接 pip install django，不用sudo。权限的问题，对后续使用不影响。不管是用pip装什么模块，前面都尽量不要加sudo。
 
 拓展：
