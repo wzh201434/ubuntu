@@ -1,0 +1,24 @@
+openssl version 提示：
+
+ /usr/local/openssl/bin/openssl: error while loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory
+
+这是由于openssl库的位置不正确造成的。
+
+可以做一个软连接
+
+假如你的libssl.so.1.1 文件在/usr/local/openssl/lib/下面，可以这样做
+
+ln -s /usr/local/openssl/lib/libssl.so.1.1 /usr/lib64/libssl.so.1.1
+
+ln -s /usr/local/openssl/lib/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1
+
+这时openssl version
+
+[root@macco-file lib64]# openssl version
+OpenSSL 1.0.1e-fips 11 Feb 2013
+
+如果要删除软连接
+
+直接删掉就好
+
+rm /usr/lib64/libcrypto.so.1.1
