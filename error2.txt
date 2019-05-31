@@ -1,0 +1,18 @@
+FailedPreconditionError (see above for traceback): Attempting to use uniniti    alized value Variable
+错误原因：定义variables后，在session中没有执行初始化
+解决办法：
+with tf.Session() as sess:
+    init_op = tf.global_variables_initializer()
+    sess.run(init_op)
+
+
+InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder' with dtype float and shape [1,2]
+错误原因：
+先执行了
+sess.run(y,feed_dict={x:[[……]]})
+在下一行又写了
+sess.run(y)
+这时报错没有赋值
+原因在于x是个变量，在任何涉及x的时候都要考虑到这一点，也就是说在任何使用或者y（涉及x）的计算中，都要给x赋值
+ 
+
