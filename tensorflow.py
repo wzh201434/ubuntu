@@ -9,7 +9,7 @@ rng = np.random.RandomState(seed)
 #随机数返回32行2列的矩阵表示32组体积和重量作为输入数据集
 X = rng.rand(32,2)
 #从X这个32行2列的矩阵中取出一行判断如果和小于1给Y 赋值1,否则给y赋值0
-Y = [[int(x0 +x1 <1)]for (x0,x1) in X]
+Y = [[int(x0 +x1 <1)] for (x0,x1) in X]
 print('X:\n',X)
 print('Y:\n',Y)
 #定义神经网络的输入、输出和参数，定义前向传播过程
